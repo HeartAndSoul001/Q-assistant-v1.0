@@ -67,18 +67,25 @@ QHeaderView::section{
 QTableView {
     margin: 0;
     padding: 0;
-    border: none;
-    show-grid: true;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    gridline-color: #d0d0d0;
     color: black;
+    background-color: white;
+    selection-background-color: rgba(65, 67, 71, 255);
+}
+
+QTableView::item {
+    padding: 4px;
 }
 
 QTableView::item:hover {
     background-color: rgba(169, 169, 203, 255);
 }
 
-
-QTableView::item:selected{
+QTableView::item:selected {
     background-color: rgba(65, 67, 71, 255);
+    color: white;
 }
 
 

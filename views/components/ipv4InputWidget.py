@@ -9,7 +9,7 @@ class ipv4InputWidget(QWidget):
     # 定义ipv4地址的4个段
     ip = ["192","168","0","1"]
     # 定义ipv4地址某一段的校验正则
-    ip_validator = QRegularExpressionValidator(QRegularExpression("(25[0-5]|2[0-4]\d|1\d{2}|\d{1,2})"))
+    ip_validator = QRegularExpressionValidator(QRegularExpression(r"(25[0-5]|2[0-4]\d|1\d{2}|\d{1,2})"))
     
     # 是否输入完成
     inputCompleted = Signal(str)

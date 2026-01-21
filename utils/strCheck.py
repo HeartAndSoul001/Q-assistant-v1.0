@@ -1,4 +1,3 @@
-
 def is_valid_txtFilename(filename) -> bool:
     # 检查长度
     if len(filename) > 255:
@@ -21,7 +20,7 @@ def is_valid_txtFilename(filename) -> bool:
         return False
 
     # 检查文件名是否只包含合法字符
-    if not all(c.isalnum() or c in ' .,;=+[]\{\}()_-' for c in base_name):
+    if not all(c.isalnum() or c in ' .,;=+[]{}()_-' for c in base_name):
         return False
 
     # 如果所有检查都通过，文件名是有效的

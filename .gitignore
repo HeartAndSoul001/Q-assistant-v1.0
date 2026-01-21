@@ -1,0 +1,32 @@
+# 方法1：使用 Add-Content
+@"
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*`$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.pytest_cache/
+"@ | Out-File .gitignore -Encoding utf8

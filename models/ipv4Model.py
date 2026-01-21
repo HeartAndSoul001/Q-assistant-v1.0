@@ -19,7 +19,7 @@ class ipv4Model:
 
     # ip字符串解析
     def ipParse(self, ip_str:str) -> IPSet:
-        ipList = re.sub("[^\d\.\-~/]+",",",ip_str).split(",")
+        ipList = re.sub(r"[^\d\.\-~/]+", ",", ip_str).split(",")
         
         # 四种ip地址输入格式
         # IP地址
@@ -129,4 +129,4 @@ class ipv4Model:
     # 10.42.4.0/24,10.39.18.0/24  -->  [[10.42.4.0,10.42.4.255],[10.39.18.0,10.39.18.255]]
     def ipStr_to_iprangeList(self, ip_str):
         return [[cidr.first,cidr.last] for cidr in self.ipParse(ip_str).iter_cidrs()]
-    
+
