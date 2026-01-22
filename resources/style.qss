@@ -1,211 +1,306 @@
-*{
-    font: 10px "Courier New";
+/* 小Q助手 - 现代 UI 样式表 */
+/* 主字体：微软雅黑 UI，兼顾中文与界面美感 */
+* {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
+    font-size: 13px;
 }
 
-
-QListWidget{
-    background-color: rgb(225,225,225); 
-    border-radius:10px; 
-    font: bold 15px "Courier New";
+/* 主窗口背景 */
+QWidget {
+    background-color: #f1f5f9;
 }
 
-QListWidget::item{
+/* ========== 左侧导航栏（可收起） ========== */
+QFrame#mainNavContainer {
+    background-color: #374151;
+    border: none;
+    border-right: 2px solid #4b5563;
+    border-radius: 0;
+}
+
+QListWidget#mainNav {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 12px 0;
+    outline: none;
+}
+
+QListWidget#mainNav::item {
+    color: #d1d5db;
     text-align: center;
-    padding:2px 4px;
-    min-height: 50px;
-    margin: 5px;
+    padding: 14px 16px;
+    min-height: 48px;
+    margin: 4px 12px;
+    border-radius: 8px;
+    border: none;
 }
 
-QListWidget::item:hover{
-    background-color: rgb(230,230,250);
+QListWidget#mainNav::item:hover {
+    background-color: #4b5563;
+    color: #ffffff;
 }
 
-QListWidget::item:pressed{
-    background-color: rgb(176,196,222);
+QListWidget#mainNav::item:selected,
+QListWidget#mainNav::item:checked {
+    background-color: #3b82f6;
+    color: #ffffff;
 }
 
-QListWidget::item:checked{
-    background-color: rgba(100, 113, 131, 255);
+QPushButton#navToggleBtn {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #4b5563;
+    border-radius: 0;
+    padding: 12px;
+    color: #d1d5db;
+    text-align: center;
 }
 
-QPushButton{
-    background-color:rgb(225,225,225); 
-    border:2px groove gray; 
-    border-radius:10px;
-    padding:2px 4px;
-    border-style:outset;
-    font: bold 12px "Courier New";
+QPushButton#navToggleBtn:hover {
+    background-color: #4b5563;
+    color: #ffffff;
+}
+
+QPushButton#navToggleBtn:pressed {
+    background-color: #6b7280;
+}
+
+/* ========== 内容区域容器 ========== */
+QWidget#contentStack {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin: 12px;
+}
+
+/* ========== 按钮 ========== */
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    color: #334155;
 }
 
 QPushButton:hover {
-    background-color: rgb(230,230,250);
-    color:black;
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #1e293b;
 }
 
 QPushButton:pressed {
-    background-color: rgb(176,196,222);
-    border-style: inset;
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
 }
 
-QHeaderView{
-    font: bold 10px "Courier New";
-    /* border: 2px solid gray; */
-    border-radius: 10px;
+QPushButton:focus {
+    outline: none;
 }
 
-QHeaderView::section{
-    color: white;
-    background: qlineargradient(x1:0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #616161, stop: 0.5 #505050,
-                                stop: 0.6 #434343, stop: 1.0 #656565);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    font: bold 12px;
+/* 主操作按钮 */
+QPushButton#primaryButton {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
 }
 
+QPushButton#primaryButton:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+QPushButton#primaryButton:pressed {
+    background-color: #1d4ed8;
+}
+
+/* ========== 表格 ========== */
+QHeaderView {
+    font-weight: 600;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+QHeaderView::section {
+    color: #ffffff;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #475569, stop:1 #334155);
+    padding: 10px 12px;
+    border: none;
+    border-right: 1px solid #475569;
+}
+
+QHeaderView::section:last {
+    border-right: none;
+}
 
 QTableView {
-    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    gridline-color: #f1f5f9;
+    color: #334155;
     padding: 0;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
-    gridline-color: #d0d0d0;
-    color: black;
-    background-color: white;
-    selection-background-color: rgba(65, 67, 71, 255);
 }
 
 QTableView::item {
-    padding: 4px;
+    padding: 10px 12px;
 }
 
 QTableView::item:hover {
-    background-color: rgba(169, 169, 203, 255);
+    background-color: #f8fafc;
 }
 
 QTableView::item:selected {
-    background-color: rgba(65, 67, 71, 255);
-    color: white;
+    background-color: #dbeafe;
+    color: #1e40af;
 }
 
-
-QTabWidget::pane{
-    border-top: 2px solid #C2C7CB;
+/* ========== 选项卡 ========== */
+QTabWidget::pane {
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: #ffffff;
+    top: -1px;
+    padding: 16px;
 }
 
-QTabBar::tab{
-    font: bold 12px "Courier New";
-    background: qlineargradient(x1:0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-    border: 2px solid #C4C4C3;
-    border-bottom-color: #C2C7CB;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    min-width: 8ex;
-    padding: 2px;
+QTabBar::tab {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 10px 20px;
+    margin-right: 4px;
+    font-weight: 500;
+    color: #64748b;
 }
 
-QTabBar::tab:selected, QTabBar::tab:hover{
-background: qlineargradient(x1:0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 #FAFAFA, stop: 0.4 #F4F4F4,
-                            stop: 0.5 #E7E7E7, stop: 1.0 #FAFAFA);
+QTabBar::tab:hover {
+    background-color: #e2e8f0;
+    color: #334155;
 }
 
-QTabBar::tab:selected{
-    border-color: #9B9B9B;
-    border-bottom-color: #C2C7CB;
+QTabBar::tab:selected {
+    background-color: #ffffff;
+    color: #3b82f6;
+    border-color: #e2e8f0;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: -1px;
 }
 
-QTabBar::tab:!selected{
-    margin-top: 2px;
+/* ========== 下拉框 ========== */
+QComboBox {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 100px;
+    font-weight: 500;
 }
 
-QComboBox{
-    border: 1px solid gray;
-    border-radius: 3px;
-    padding: 1px 2px 1px 2px;
-    min-width: 2em;
-    font: bold 12px "Courier New";
+QComboBox:hover {
+    border-color: #cbd5e1;
 }
 
-QComboBox::drop-down{
+QComboBox::drop-down {
     subcontrol-origin: padding;
     subcontrol-position: top right;
-    width: 20px;
-
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    width: 28px;
+    border: none;
+    border-left: 1px solid #e2e8f0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     image: url(./resources/images/downbtn.png);
 }
 
-QLabel{
-    font: bold "Courier New";
+/* ========== 标签 ========== */
+QLabel {
+    font-weight: 500;
+    color: #334155;
 }
 
-QLineEdit{
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    selection-background-color: darkgray;
+/* ========== 单行输入框 ========== */
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    selection-background-color: #bfdbfe;
 }
 
-QPlainTextEdit{
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    selection-background-color: darkgray;
-    font: bold 14px "Courier New";
+QLineEdit:hover {
+    border-color: #cbd5e1;
 }
 
-QPlainTextEdit:read-only{
-    color: black;
-    background-color: darkgray;
-    font: bold 12px "Courier New";
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    selection-background-color: darkgray;
+QLineEdit:focus {
+    border-color: #3b82f6;
 }
 
+QLineEdit:read-only {
+    background-color: #f8fafc;
+    color: #64748b;
+}
+
+/* ========== 多行文本 / 代码编辑器 ========== */
+QPlainTextEdit {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: "Consolas", "Microsoft YaHei UI", monospace;
+    font-size: 13px;
+    selection-background-color: #bfdbfe;
+}
+
+QPlainTextEdit:hover {
+    border-color: #cbd5e1;
+}
+
+QPlainTextEdit:focus {
+    border-color: #3b82f6;
+}
+
+QPlainTextEdit:read-only {
+    background-color: #f8fafc;
+    color: #475569;
+}
 
 /* 代码编辑器容器 */
 #codeEditor {
     background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
 }
 
-/* 行号区域样式 */
 #codeEditor #numberArea {
     width: 40px;
-    background-color: #f0f0f0;
-    border-right: 1px dashed #dddddd;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
-/* 行号 ListView 样式 */
 #codeEditor #numberListView {
     background-color: transparent;
 }
 
-/* 行号文本样式 */
 #codeEditor #numberListView Text {
-    color: #666666;
-    font-size: 14px;
-    padding: 5px;
+    color: #94a3b8;
+    font-size: 12px;
 }
 
-/* 代码编辑器样式 */
 #codeEditorTextEdit {
     placeholder-text: "请输入代码...";
-    font-size: 14px;
+    font-size: 13px;
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border: none;
 }
 
-#codeEditorTextEdit:focus {
-    placeholder-text: "";
+/* ========== 功能性框架 (myComboBox 等) ========== */
+QFrame {
+    background-color: transparent;
 }

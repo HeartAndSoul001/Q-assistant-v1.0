@@ -40,6 +40,8 @@ class iconManager(QObject):
             "tracert路由跟踪":'mdi6.transit-connection-horizontal',
             "警告提示":'ri.error-warning-line',
             "信息提示":'ri.information-fill',
+            "导航收起": 'mdi6.chevron-double-left',
+            "导航展开": 'mdi6.chevron-double-right',
         }
             cls._initialized = True
     

@@ -27,14 +27,10 @@ class subnetsCalcuView(QWidget):
         self.subnet_table_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.subnet_table_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectItems)
 
-        # 创建垂直布局
         layout = QVBoxLayout()
-        
-        # 移除布局的边距
-        layout.setContentsMargins(0, 0, 0, 0)  # 左、上、右、下边距设为0
-        layout.setSpacing(0)  # 组件之间的间距设为0
-        
-        # 添加组件
+        layout.setContentsMargins(20, 20, 20, 20)
+        layout.setSpacing(16)
+
         layout.addWidget(self.ipv4_input_widget)
         layout.addWidget(self.subnet_table_view)
         

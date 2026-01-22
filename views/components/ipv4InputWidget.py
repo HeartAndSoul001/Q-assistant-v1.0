@@ -22,21 +22,16 @@ class ipv4InputWidget(QWidget):
 
     def init_ui(self):
         layout = QHBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(8)
 
-        # 创建四个 QLineEdit 分别用于输入 IPv4 地址的四个段
-        self.segment_inputs = [
-            myLineEdit(self.ip_validator) for _ in range(4)]
-
+        self.segment_inputs = [myLineEdit(self.ip_validator) for _ in range(4)]
         for index, input_field in enumerate(self.segment_inputs):
-            input_field.setText(self.ip[index])  # 设置初始字段
+            input_field.setText(self.ip[index])
             input_field.installEventFilter(self)
             input_field.pasteSignal.connect(self.pasteEvent)
-        
             layout.addWidget(input_field)
-            layout.setSpacing(5)
-
             if index < 3:
-                # 在每两个输入框之间添加一个点，用 QLabel 实现
                 dot_label = QLabel(".")
                 dot_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 layout.addWidget(dot_label)
